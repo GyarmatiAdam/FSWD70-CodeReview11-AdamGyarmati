@@ -43,6 +43,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 
         </select>
       </div>
+      <!-- location attributes -->
       <div method="POST" class="form-group">
         <input type="text" class="form-control" name="city" id="city" placeholder="City">
       </div>
@@ -52,26 +53,44 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <div class="form-group">
         <input type="text" class="form-control" name="addr" id="addr" placeholder="Addresse">
       </div>
+      <!-- event attributes -->
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="ev_name" id="ev_name" placeholder="Event Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="ev_type" id="ev_type" placeholder="Event Type">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="ev_descript" id="ev_descript" placeholder="Event Description">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="ev_url" id="ev_url" placeholder="Event Website">
+      </div>
+      <!-- concert attributes -->
+      <div class="form-group">
+        <input type="text" class="form-control" name="con_name" id="con_name" placeholder="Concert Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="con_datetime" id="con_datetime" placeholder="Date and Time YYYY-MM-DD 23:59:59">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+      </div>
+      <!-- restaurant attributes -->
+      <div class="form-group">
+        <input type="text" class="form-control" name="rest_name" id="rest_name" placeholder="Restaurant Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="">
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="rest_type" id="rest_type" placeholder="Restaurant Type">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="rest_descript" id="rest_descript" placeholder="Restaurant Description">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="rest_url" id="rest_url" placeholder="Restaurant Website">
       </div>
       <?php
   if (isset($_SESSION['admin'])){
