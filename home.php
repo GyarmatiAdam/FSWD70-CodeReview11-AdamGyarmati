@@ -7,19 +7,19 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
 }
 
-//retrive datas from db
-$sql = "SELECT * FROM locations 
-RIGHT JOIN events
-ON locations.loc_id = events.fk_loc_id
-LEFT JOIN concert
-ON locations.loc_id = concert.fk_loc_id
-LEFT JOIN restaurant
-ON locations.loc_id = restaurant.fk_loc_id;" ;
+// //retrive datas from db
+// $sql = "SELECT * FROM locations 
+// RIGHT JOIN events
+// ON locations.loc_id = events.fk_loc_id
+// LEFT JOIN concert
+// ON locations.loc_id = concert.fk_loc_id
+// LEFT JOIN restaurant
+// ON locations.loc_id = restaurant.fk_loc_id;" ;
 
-$result = $connect->query($sql);
+// $result = $connect->query($sql);
 
-    if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+//     if($result->num_rows > 0) {
+//         while($row = $result->fetch_assoc()) {
 
 ?>
 
@@ -53,6 +53,15 @@ $result = $connect->query($sql);
     
 
     <?php
+    //retrive datas from db
+      $sql = "SELECT * FROM locations 
+      RIGHT JOIN restaurant
+      ON locations.loc_id = restaurant.fk_loc_id;" ;
+
+      $result = $connect->query($sql);
+
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
     //restaurants
       echo '<table class="table">
       <tr>
@@ -88,7 +97,21 @@ $result = $connect->query($sql);
       <tr>
       <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
       </tr>';
+      
+    }
+  } else  {
+      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+  }
 
+      //retrive datas from db
+      $sql = "SELECT * FROM locations 
+      RIGHT JOIN concert
+      ON locations.loc_id = concert.fk_loc_id;" ;
+
+      $result = $connect->query($sql);
+
+          if($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
       //cocerts
       echo '<table class="table">
       <tr>
@@ -113,7 +136,21 @@ $result = $connect->query($sql);
       <tr>
       <td colspan="7">'.$row['price'] .'</td>
       </tr>';
+      
+    }
+  } else  {
+      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+  }
 
+      //retrive datas from db
+      $sql = "SELECT * FROM locations 
+      RIGHT JOIN events
+      ON locations.loc_id = events.fk_loc_id;" ;
+
+      $result = $connect->query($sql);
+
+          if($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
       //Place to GO
       echo '<table class="table">
       <tr>
