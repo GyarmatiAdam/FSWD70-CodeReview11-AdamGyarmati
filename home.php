@@ -82,6 +82,11 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <tr>
       <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
       </tr>';
+
+      if (isset($_SESSION['admin'])){
+        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
+        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
+      }
       
     }
   } else  {
@@ -121,6 +126,11 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <tr>
       <td colspan="7">'.$row['price'] .'</td>
       </tr>';
+
+      if (isset($_SESSION['admin'])){
+        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
+        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
+      }
       
     }
   } else  {
@@ -170,6 +180,11 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <td colspan="7"><a target="_blank" href="">'.$row['ev_url'] .'</a></td>
       </tr>';
 
+      if (isset($_SESSION['admin'])){
+        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
+        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
+      }
+
     }
   } else  {
       echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
@@ -187,7 +202,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script-ajax.js" type="text/javascript"></script>
+    <script src="inc/script-ajax.js" type="text/javascript"></script>
 
   </body>
 </html>
