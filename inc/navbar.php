@@ -15,13 +15,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <a class="nav-link" href="home.php">Home<span class="sr-only"></span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Restaurant</a>
+      <a class="nav-link" href="restaurant.php">Restaurant</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Concert</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Place to GO</a>
+      <a class="nav-link" href="events.php">Events</a>
     </li>
     <!-- hidden button for amin only -->
     <?php

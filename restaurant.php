@@ -8,6 +8,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 }
 
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +21,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Home</title>
+    <title>Restaurants</title>
   </head>
   <body>
   <?php
@@ -34,7 +35,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <div class="col-sm-10">
   
     <div>
-    <!-- restaurants, events and concerts are displayed here -->
+    <!-- restaurants displayed here -->
     
 
     <?php
@@ -83,93 +84,6 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
       </tr>';
       
-    }
-  } else  {
-      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-  }
-
-      //retrive datas from db
-      $sql = "SELECT * FROM locations 
-      RIGHT JOIN concert
-      ON locations.loc_id = concert.fk_loc_id;" ;
-
-      $result = $connect->query($sql);
-
-          if($result->num_rows > 0) {
-              while($row = $result->fetch_assoc()) {
-      //cocerts
-      echo '<table class="table">
-      <tr>
-      <th scope="col">City</th>
-      <th scope="col">Concert Name</th>
-      </tr>
-      <tr>
-      <td scope="row">'.$row['city'] .'</td>
-      <td>'.$row['con_name'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Date and Time</th>
-      </tr>
-      <tr>
-      <td colspan="7">'.$row['con_datetime'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Price</th>
-      </tr>
-      <tr>
-      <td colspan="7">'.$row['price'] .'</td>
-      </tr>';
-      
-    }
-  } else  {
-      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-  }
-
-      //retrive datas from db
-      $sql = "SELECT * FROM locations 
-      RIGHT JOIN events
-      ON locations.loc_id = events.fk_loc_id;" ;
-
-      $result = $connect->query($sql);
-
-          if($result->num_rows > 0) {
-              while($row = $result->fetch_assoc()) {
-      //Place to GO
-      echo '<table class="table">
-      <tr>
-      <th scope="col">City</th>
-      <th scope="col">Place to GO</th>
-      </tr>
-      <tr>
-      <td scope="row">'.$row['city'] .'</td>
-      <td>'.$row['ev_name'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Address</th>
-      <th scope="col">Type</th>
-      </tr>
-      <tr>
-      <td scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
-      <td>'.$row['ev_type'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Description</th>
-      </tr>
-      <tr>
-      <td colspan="7">'.$row['ev_descript'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Website</th>
-      </tr>
-      <tr>
-      <td colspan="7"><a target="_blank" href="">'.$row['ev_url'] .'</a></td>
-      </tr>';
-
     }
   } else  {
       echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";

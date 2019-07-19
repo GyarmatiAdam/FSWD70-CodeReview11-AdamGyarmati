@@ -34,60 +34,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <div class="col-sm-10">
   
     <div>
-    <!-- restaurants, events and concerts are displayed here -->
+    <!-- events and concerts are displayed here -->
     
 
     <?php
-    //retrive datas from db
-      $sql = "SELECT * FROM locations 
-      RIGHT JOIN restaurant
-      ON locations.loc_id = restaurant.fk_loc_id;" ;
-
-      $result = $connect->query($sql);
-
-    if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-    //restaurants
-      echo '<table class="table">
-      <tr>
-      <th scope="col">City</th>
-      <th scope="col">Restaurant Name</th>
-      </tr>
-      <tr>
-      <td scope="row">'.$row['city'] .'</td>
-      <td>'.$row['rest_name'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Address</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Type</th>
-      </tr>
-      <tr>
-      <td scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
-      <td>'.$row['phone'] .'</td>
-      <td>'.$row['rest_type'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Description</th>
-      </tr>
-      <tr>
-      <td colspan="7">'.$row['rest_descript'] .'</td>
-      </tr><br>
-
-      <tr>
-      <th scope="col">Website</th>
-      </tr>
-      <tr>
-      <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
-      </tr>';
-      
-    }
-  } else  {
-      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-  }
-
       //retrive datas from db
       $sql = "SELECT * FROM locations 
       RIGHT JOIN concert
