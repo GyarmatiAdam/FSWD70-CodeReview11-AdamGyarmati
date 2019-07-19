@@ -2,6 +2,8 @@
  ob_start();
  session_start();
 
+ require_once 'dbconnection.php';
+
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
 }
@@ -92,12 +94,51 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
         <input type="text" class="form-control" name="rest_url" id="rest_url" placeholder="Restaurant Website">
       </div>
 <?php  
-  if (isset($_SESSION['admin'])){}
+ // if (isset($_SESSION['admin'])){}
 ?>
     <div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert</button>
-  
-  
     </form><br>
+
+    <?php
+      $msg = "";
+
+      if (isset($_POST['upload'])) {
+
+        $image = $_FILES['image']['name'];
+
+        $target = "images/".basename($image);
+
+        $sql = "INSERT INTO locations (images) VALUES ('$image')";
+        mysqli_query($connect, $sql);
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+          $msg = "Image uploaded successfully";
+        }else{
+          $msg = "Failed to upload image";
+        }
+      }
+      $sql2 = "SELECT images FROM locations";
+      $result = mysqli_query($connect, $sql2);
+    ?>
+          <div id="content">
+        <?php
+          // while ($row = mysqli_fetch_array($result)) {
+          //   echo "<div id='img_div'>";
+          //   	echo "<img src='images/".$row['images']."' >";
+          //   echo "</div>";
+          // }
+        ?>
+          <form method="POST" action="admin.php" enctype="multipart/form-data">
+            <input type="hidden" name="size" value="1000000">
+            <div>
+              <input type="file" name="image">
+            </div>
+            <div>
+              <button class="btn btn-secondary" type="submit" name="upload">Upload</button>
+            </div>
+          </form>
+        </div>
+
         </div>
         <div class="col-sm-1">
 
