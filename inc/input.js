@@ -1,4 +1,8 @@
-  //if Place to GO choosed
+/**
+  * these scripts disables or enables the input fields on admin.php
+  * depends on event type
+*/
+//if Place to GO choosed
 $('#eventType').change(function() {
     if( $(this).val() == 1) {
         $('#con_name').prop( "disabled", true );

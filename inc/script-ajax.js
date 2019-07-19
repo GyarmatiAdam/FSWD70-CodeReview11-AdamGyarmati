@@ -1,7 +1,4 @@
-/**
-  * these scripts disables or enables the input fields on admin.php
-  * depends on event type
-*/
+
 $("#email").keyup(function(){
 
   var email = $("#email").val();
@@ -31,43 +28,43 @@ $("#submit_register").click(function(){
   }
 });
 ////////////////inser into///////////////////////////////////////////////////////////
-// var request;
+var request;
 
-// $("#insertForm").submit(function(event){
-//    event.preventDefault();
+$("#insertForm").submit(function(event){
+   event.preventDefault();
 
-//    if (request) {
-//        request.abort();
-//    }
+   if (request) {
+       request.abort();
+   }
 
-//    var $form = $(this);
+   var $form = $(this);
 
-//    var $inputs = $form.find("input, select, button, textarea");
+   var $inputs = $form.find("input, select, button, textarea");
 
-//    var serializedData = $form.serialize();
-//    $inputs.prop("disabled", true);
+   var serializedData = $form.serialize();
+   $inputs.prop("disabled", true);
 
-//    request = $.ajax({
-//        url: "admin.php",
-//        type: "post",
-//        data: serializedData
-//    });
+   request = $.ajax({
+       url: "admin.php",
+       type: "post",
+       data: serializedData
+   });
 
-//    request.done(function (response, textStatus, jqXHR){
-//        console.log("Success!");
-//    });
+   request.done(function (response, textStatus, jqXHR){
+       console.log("Success!");
+   });
 
-//    request.fail(function (jqXHR, textStatus, errorThrown){
+   request.fail(function (jqXHR, textStatus, errorThrown){
 
-//        console.error(
-//            "The following error occurred: "+
-//            textStatus, errorThrown
-//        );
-//    });
+       console.error(
+           "The following error occurred: "+
+           textStatus, errorThrown
+       );
+   });
 
-//    request.always(function () {
+   request.always(function () {
 
-//        $inputs.prop("disabled", false);
-//    });
-// });
+       $inputs.prop("disabled", false);
+   });
+});
 
