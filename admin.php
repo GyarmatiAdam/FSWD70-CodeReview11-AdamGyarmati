@@ -1,7 +1,8 @@
 <?php
  ob_start();
  session_start();
-require_once 'dbconnection.php';
+
+require_once "inc/server-side.php";
 
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
@@ -32,27 +33,52 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 
     </div>
     <div class="col-sm-10">
-    <?php
-  if (isset($_SESSION['admin'])){
-  echo'<form id="insertForm">
+  <form id="insertForm">
       <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="Name">
-      </div>
-      <div class="form-group">
-        <input type="number" class="form-control" name="" id="" placeholder="Price">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="Category">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="" id="" placeholder="Details">
-      </div>';
+        <select class="form-control" name="eventType" id="eventType">
+          <option value="">Select Type</option>
+          <option value="1">Place to GO</option>
+          <option value="2">Concert</option>
+          <option value="3">Restaurant</option>
 
+        </select>
+      </div>
+      <div method="POST" class="form-group">
+        <input type="text" class="form-control" name="city" id="city" placeholder="City">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="zip_code" id="zip_code" placeholder="ZIP code">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="addr" id="addr" placeholder="Addresse">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="">
+      </div>
+      <?php
+  if (isset($_SESSION['admin'])){
+  echo "";
 // if session is admin those buttons are visible 
 
     echo '<div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert</button>';
-    echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
-    echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
   }
   ?>
     </form><br>
@@ -64,9 +90,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="inc/input.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="inc/script-ajax.js" type="text/javascript"></script>
+    <script src="script-ajax.js" type="text/javascript"></script>
 
   </body>
 </html>
