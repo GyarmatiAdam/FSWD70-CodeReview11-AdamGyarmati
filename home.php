@@ -6,6 +6,21 @@ require_once 'dbconnection.php';
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
 }
+
+//retrive datas from db
+$sql = "SELECT * FROM locations 
+RIGHT JOIN events
+ON locations.loc_id = events.fk_loc_id
+LEFT JOIN concert
+ON locations.loc_id = concert.fk_loc_id
+LEFT JOIN restaurant
+ON locations.loc_id = restaurant.fk_loc_id;" ;
+
+$result = $connect->query($sql);
+
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+
 ?>
 
 <!doctype html>
@@ -26,15 +41,120 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   <?php
   include_once "inc/navbar.php";
   ?>
-  <div style="margin-top: 5rem" class="container">
+  <div style="margin-top: 1rem; margin-bottom: 3rem" class="container">
   <div class="row">
     <div class="col-sm-1">
 
     </div>
     <div class="col-sm-10">
+  
+    <div>
+    <!-- restaurants, events and concerts ar displayed here -->
+    
+
     <?php
-    ?>
-    </form><br>
+    //restaurants
+      echo '<table class="table">
+      <tr>
+      <th scope="col">City</th>
+      <th scope="col">Restaurant Name</th>
+      </tr>
+      <tr>
+      <td scope="row">'.$row['city'] .'</td>
+      <td>'.$row['rest_name'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Type</th>
+      </tr>
+      <tr>
+      <td scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
+      <td>'.$row['phone'] .'</td>
+      <td>'.$row['rest_type'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Description</th>
+      </tr>
+      <tr>
+      <td colspan="7">'.$row['rest_descript'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Website</th>
+      </tr>
+      <tr>
+      <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
+      </tr>';
+
+      //cocerts
+      echo '<table class="table">
+      <tr>
+      <th scope="col">City</th>
+      <th scope="col">Concert Name</th>
+      </tr>
+      <tr>
+      <td scope="row">'.$row['city'] .'</td>
+      <td>'.$row['con_name'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Date and Time</th>
+      </tr>
+      <tr>
+      <td colspan="7">'.$row['con_datetime'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Price</th>
+      </tr>
+      <tr>
+      <td colspan="7">'.$row['price'] .'</td>
+      </tr>';
+
+      //Place to GO
+      echo '<table class="table">
+      <tr>
+      <th scope="col">City</th>
+      <th scope="col">Place to GO</th>
+      </tr>
+      <tr>
+      <td scope="row">'.$row['city'] .'</td>
+      <td>'.$row['ev_name'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Address</th>
+      <th scope="col">Type</th>
+      </tr>
+      <tr>
+      <td scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
+      <td>'.$row['ev_type'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Description</th>
+      </tr>
+      <tr>
+      <td colspan="7">'.$row['ev_descript'] .'</td>
+      </tr><br>
+
+      <tr>
+      <th scope="col">Website</th>
+      </tr>
+      <tr>
+      <td colspan="7"><a target="_blank" href="">'.$row['ev_url'] .'</a></td>
+      </tr>';
+
+    }
+  } else  {
+      echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+  }
+?>
+      </table><br>
+        </div>
         </div>
         <div class="col-sm-1">
 
