@@ -33,7 +33,28 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     </div>
     <div class="col-sm-10">
     <?php
-    ?>
+  if (isset($_SESSION['admin'])){
+  echo'<form id="insertForm">
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" name="" id="" placeholder="Price">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="Category">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="" id="" placeholder="Details">
+      </div>';
+
+// if session is admin those buttons are visible 
+
+    echo '<div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert</button>';
+    echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
+    echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
+  }
+  ?>
     </form><br>
         </div>
         <div class="col-sm-1">
