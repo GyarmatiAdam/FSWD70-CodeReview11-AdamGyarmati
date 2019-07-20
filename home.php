@@ -84,9 +84,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr>';
 
       if (isset($_SESSION['admin'])){
-        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
-        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
-      }
+       echo "<div class='btn-group mr-2' role='group'>
+        <a href='update.php?loc_id=" .$row['loc_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
+        <a href='delete.php?loc_id=" .$row['loc_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div>";
+  }
       
     }
   } else  {
@@ -128,9 +129,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr>';
 
       if (isset($_SESSION['admin'])){
-        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
-        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
-      }
+        echo "<div class='btn-group mr-2' role='group'>
+         <a href='update.php?loc_id=" .$row['loc_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
+         <a href='delete.php?loc_id=" .$row['loc_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div>";
+   }
       
     }
   } else  {
@@ -181,9 +183,10 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr>';
 
       if (isset($_SESSION['admin'])){
-        echo "<button type='submit' value=delete id='delete' name='delete' class='btn btn-primary'>Delete</button>";
-        echo '<button type="submit" value="update" id="update" name="update" class="btn btn-primary">Update</button></div>';
-      }
+        echo "<div class='btn-group mr-2' role='group'>
+         <a href='update.php?loc_id=" .$row['loc_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
+         <a href='delete.php?loc_id=" .$row['loc_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div>";
+   }
 
     }
   } else  {
