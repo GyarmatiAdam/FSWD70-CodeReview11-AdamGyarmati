@@ -5,12 +5,12 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 }
 require_once 'dbconnection.php';
 
-if ($_GET['loc_id']) {
-  $id = $_GET['loc_id'];
+if ($_GET['rest_id']) {
+  $id = $_GET['rest_id'];
 
 
 
-  $sql = "SELECT * FROM locations WHERE loc_id = {$id}";
+  $sql = "SELECT * FROM restaurant WHERE rest_id = {$id}";
   $result = $connect->query($sql);
   $data = $result->fetch_assoc();
 
@@ -38,7 +38,7 @@ if ($_GET['loc_id']) {
 
 <h3>Do you really want to delete this user?</h3>
 <form method="POST" enctype="multipart/form-data" action ="inc/action_delete.php">
-   <input type="hidden" name="loc_id" value="<?php echo $data['loc_id'] ?>"/>
+   <input type="hidden" name="rest_id" value="<?php echo $data['rest_id'] ?>"/>
    <button type="delete" name="delete">Yes, delete it!</button>
    <a href="home.php"><button type="button" value="delete">No, go back!</button></a>
 

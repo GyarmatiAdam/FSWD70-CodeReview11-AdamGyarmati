@@ -30,9 +30,9 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <div class="col-sm-8">
 <?php
 if ($_POST) {
-   $id = $_POST['loc_id'];
+   $id = $_POST['rest_id'];
 
-   $sql = "DELETE FROM locations WHERE loc_id = {$id};";
+   $sql = "DELETE FROM restaurant WHERE rest_id = {$id};";
     if($connect->query($sql) === TRUE) {
        echo "<p class='alert alert-success' role='alert'>The media was successfully deleted!!</p>";
 
