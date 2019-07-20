@@ -85,7 +85,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 
       if (isset($_SESSION['admin'])){
        echo "<div class='btn-group mr-2' role='group'>
-        <a href='update.php?loc_id=" .$row['loc_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
+        <a href='update_res.php?rest_id=" .$row['rest_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
         <a href='delete.php?loc_id=" .$row['loc_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div>";
   }
       
