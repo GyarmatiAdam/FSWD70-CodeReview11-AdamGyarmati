@@ -1,4 +1,6 @@
 <?php 
+ ob_start();
+ session_start();
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
         header("Location: index.php");
       }
@@ -36,4 +38,6 @@ VALUES(
 if(mysqli_query($conn,$query5)){
         echo "insert success";
 }
+
+ob_end_flush();
 ?>

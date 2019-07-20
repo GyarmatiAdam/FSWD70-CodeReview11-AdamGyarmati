@@ -1,4 +1,5 @@
 <?php 
+ ob_start();
  session_start();
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
@@ -58,3 +59,4 @@ if ($_GET['con_id']) {
 
 </body>
 </html>
+<?php ob_end_flush(); ?>

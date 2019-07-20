@@ -1,4 +1,6 @@
 <?php
+ ob_start();
+ session_start();
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
         header("Location: index.php");
       }
@@ -32,4 +34,6 @@ $query= "INSERT INTO locations (city, zip_code, addr)
 if(mysqli_query($connect,$query)){
         echo "insert success";
 }
+
+ob_end_flush();
 ?>
