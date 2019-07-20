@@ -4,9 +4,9 @@
 
  require_once 'dbconnection.php';
 
-if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
-  header("Location: index.php");
-}
+// if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
+//   header("Location: index.php");
+// }
 
 ?>
 

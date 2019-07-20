@@ -15,7 +15,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Add Event</title>
+    <title>Add Place to GO</title>
   </head>
   <body>
   <?php
@@ -46,7 +46,7 @@
                 <input type="text" class="form-control" name="ev_url" id="ev_url" placeholder="Event Website">
             </div>
 
-            <div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert location</button>
+            <div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert Place to GO</button>
         </form>
     </div>
     <div class="col-sm-2">
