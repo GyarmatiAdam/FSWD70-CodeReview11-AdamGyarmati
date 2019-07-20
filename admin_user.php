@@ -1,5 +1,9 @@
 <?php
  session_start();
+
+ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
+    header("Location: index.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,7 @@
     <div class="col-sm-8">
 
         <form id="insertForm5">
-    <!-- event attributes -->
+    <!-- admin attributes -->
             <div class="form-group">
                 <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
             </div>
@@ -37,9 +41,9 @@
                 <input type="text" class="form-control" name="email" id="email" placeholder="Email">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="pass" id="pass" placeholder="Password"></input>
+                <input type="text" class="form-control" name="pass" id="pass" placeholder="Password">
             </div>
-            <div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Insert location</button>
+            <div><button type="submit" value="add" id="add" name="add" class="btn btn-primary">Add new admin</button>
         </form>
     </div>
     <div class="col-sm-2">

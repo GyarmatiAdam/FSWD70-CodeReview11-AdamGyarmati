@@ -1,4 +1,8 @@
 <?php 
+if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
+        header("Location: index.php");
+      }
+      
 $city = isset($_POST['city']) ? $_POST['city'] : null;
 $zip_code = isset($_POST['zip_code']) ? $_POST['zip_code'] : null;
 $addr = isset($_POST['addr']) ? $_POST['addr'] : null;

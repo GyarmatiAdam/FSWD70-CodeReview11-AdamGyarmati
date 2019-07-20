@@ -1,4 +1,8 @@
 <?php 
+if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
+        header("Location: index.php");
+      }
+      
 $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
 $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;

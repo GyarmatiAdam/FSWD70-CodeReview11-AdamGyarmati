@@ -1,4 +1,8 @@
 <?php 
+if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
+        header("Location: index.php");
+      }
+
 $fk_loc_id = isset($_POST['fk_loc_id']) ? $_POST['fk_loc_id'] : null;
 $con_name = isset($_POST['con_name']) ? $_POST['con_name'] : null;
 $con_datetime = isset($_POST['con_datetime']) ? $_POST['con_datetime'] : null;
