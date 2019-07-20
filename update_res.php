@@ -23,12 +23,10 @@ if ($_GET['rest_id']) {
      <html>
      <head>
         <title>Update</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      </head>
      <body>
     <?php 
- 
         require_once 'inc/navbar.php';
     ?> 
 <div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
@@ -42,19 +40,21 @@ if ($_GET['rest_id']) {
 
         <form action="inc/action_update.php" method="post">
                 <div class="form-group">
-                    <input type="text"  name="rest_name" placeholder ="" value="<?php echo $data['rest_name'] ?>"/>
+                    <input type="text" class="form-control" name="rest_name" value="<?php echo $data['rest_name'] ?>"/>
                 </div>     
                 <div class="form-group">
-                    <input type= "text" name="phone" placeholder="" value ="<?php echo $data['phone'] ?>"/>
+                    <input type= "text" class="form-control" name="phone" value ="<?php echo $data['phone'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="rest_type" placeholder="" value ="<?php echo $data['rest_type'] ?>"/>
+                    <input type= "text" class="form-control" name="rest_type" value ="<?php echo $data['rest_type'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="rest_descript" placeholder="" value ="<?php echo $data['rest_descript'] ?>"/>
+                <textarea name="rest_descript" class="form-control" cols="30" rows="10">
+                    <?php echo $data['rest_descript'] ?> 
+                </textarea>
                 </div> 
                 <div class="form-group">
-                    <input type="text" name="rest_url" placeholder="" value="<?php echo $data['rest_url'] ?>"/>
+                    <input type="text" class="form-control" name="rest_url" value="<?php echo $data['rest_url'] ?>"/>
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="rest_id" value="<?php echo $data['rest_id']?>"/>

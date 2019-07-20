@@ -23,6 +23,7 @@ if ($_GET['ev_id']) {
      <html>
      <head>
         <title>Update</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
      </head>
      <body>
@@ -40,16 +41,18 @@ if ($_GET['ev_id']) {
 
         <form action="inc/action_update_ev.php" method="post">
                 <div class="form-group">
-                    <input type="text"  name="ev_name" placeholder ="" value="<?php echo $data['ev_name'] ?>"/>
+                    <input type="text" class="form-control" name="ev_name" placeholder ="" value="<?php echo $data['ev_name'] ?>"/>
                 </div>     
                 <div class="form-group">
-                    <input type= "text" name="ev_type" placeholder="" value ="<?php echo $data['ev_type'] ?>"/>
+                    <input type= "text" class="form-control" name="ev_type" placeholder="" value ="<?php echo $data['ev_type'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="ev_descript" placeholder="" value ="<?php echo $data['ev_descript'] ?>"/>
+                <textarea name="ev_descript" class="form-control" id="" cols="30" rows="10">
+                    <?php echo $data['ev_descript'] ?>
+                </textarea>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="ev_url" placeholder="" value ="<?php echo $data['ev_url'] ?>"/>
+                    <input type= "text" class="form-control" name="ev_url" placeholder="" value ="<?php echo $data['ev_url'] ?>"/>
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="ev_id" value="<?php echo $data['ev_id']?>"/>

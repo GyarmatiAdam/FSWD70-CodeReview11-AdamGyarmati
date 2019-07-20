@@ -30,17 +30,17 @@ if ($_POST) {
   <body>
   <div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
 
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
 
 <?php
     $sql = "UPDATE events SET ev_name = '$ev_name', ev_type = '$ev_type', ev_descript = '$ev_descript', ev_url = '$ev_url' WHERE ev_id = {$id}";
     if($connect->query($sql) === TRUE) {
         echo  "<p>Successfully Updated</p>";
-        echo "<a href='../update_ev.php?ev_id=" .$id."'><button type='button'>Back</button></a>";
-        echo  "<a href='../home.php'><button type='button'>Home</button></a>";
+        echo "<a href='../update_ev.php?ev_id=" .$id."'><button class='btn btn-primary' type='button'>Back</button></a>";
+        echo  "<a href='../home.php'><button class='btn btn-success' type='button'>Home</button></a>";
     } else {
          echo "Error while updating record : ". $connect->error;
     }
@@ -51,7 +51,7 @@ if ($_POST) {
  ?>
 
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
 
             </div>
         </div>

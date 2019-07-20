@@ -23,6 +23,7 @@ if ($_GET['con_id']) {
      <html>
      <head>
         <title>Update</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
      </head>
      <body>
@@ -40,13 +41,13 @@ if ($_GET['con_id']) {
 
         <form action="inc/action_update_con.php" method="post">
                 <div class="form-group">
-                    <input type="text"  name="con_name" placeholder ="" value="<?php echo $data['con_name'] ?>"/>
+                    <input type="text" class="form-control" name="con_name" placeholder ="" value="<?php echo $data['con_name'] ?>"/>
                 </div>     
                 <div class="form-group">
-                    <input type= "text" name="con_datetime" placeholder="" value ="<?php echo $data['con_datetime'] ?>"/>
+                    <input type= "text" class="form-control" name="con_datetime" placeholder="" value ="<?php echo $data['con_datetime'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="price" placeholder="" value ="<?php echo $data['price'] ?>"/>
+                    <input type= "text" class="form-control" name="price" placeholder="" value ="<?php echo $data['price'] ?>"/>
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="con_id" value="<?php echo $data['con_id']?>"/>

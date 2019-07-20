@@ -31,17 +31,17 @@ if ($_POST) {
   <body>
   <div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
 
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
 
 <?php
     $sql = "UPDATE restaurant SET rest_name = '$rest_name', phone = '$phone', rest_type = '$rest_type', rest_descript = '$rest_descript', rest_url = '$rest_url' WHERE rest_id = {$id}";
     if($connect->query($sql) === TRUE) {
         echo  "<p>Successfully Updated</p>";
-        echo "<a href='../update_res.php?rest_id=" .$id."'><button type='button'>Back</button></a>";
-        echo  "<a href='../home.php'><button type='button'>Home</button></a>";
+        echo "<a href='../update_res.php?rest_id=" .$id."'><button class='btn btn-primary' type='button'>Back</button></a>";
+        echo  "<a href='../home.php'><button class='btn btn-success' type='button'>Home</button></a>";
     } else {
          echo "Error while updating record : ". $connect->error;
     }
@@ -52,7 +52,7 @@ if ($_POST) {
  ?>
 
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
 
             </div>
         </div>
