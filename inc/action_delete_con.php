@@ -12,7 +12,6 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-   <title>The Big </title>
 
 </head>
 <body style="margin-top: 5rem">
@@ -30,9 +29,9 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <div class="col-sm-8">
 <?php
 if ($_POST) {
-   $id = $_POST['rest_id'];
+   $id = $_POST['con_id'];
 
-   $sql = "DELETE FROM restaurant WHERE rest_id = {$id};";
+   $sql = "DELETE FROM concert WHERE con_id = {$id};";
     if($connect->query($sql) === TRUE) {
        echo "<p class='alert alert-success' role='alert'>The media was successfully deleted!!</p>";
 

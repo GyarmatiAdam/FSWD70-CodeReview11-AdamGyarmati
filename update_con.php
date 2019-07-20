@@ -7,10 +7,10 @@ require_once 'dbconnection.php';
 if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
   header("Location: index.php");
 }
-if ($_GET['rest_id']) {
-    $id = $_GET['rest_id'];
+if ($_GET['con_id']) {
+    $id = $_GET['con_id'];
      
-        $sql = "SELECT * FROM restaurant WHERE rest_id = {$id}" ;
+        $sql = "SELECT * FROM concert WHERE con_id = {$id}" ;
         $result = $connect->query($sql);
      
         $data = $result->fetch_assoc();
@@ -23,12 +23,10 @@ if ($_GET['rest_id']) {
      <html>
      <head>
         <title>Update</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
      </head>
      <body>
     <?php 
- 
         require_once 'inc/navbar.php';
     ?> 
 <div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
@@ -40,24 +38,18 @@ if ($_GET['rest_id']) {
             <div class="col-sm-8">
 
 
-        <form action="inc/action_update.php" method="post">
+        <form action="inc/action_update_con.php" method="post">
                 <div class="form-group">
-                    <input type="text"  name="rest_name" placeholder ="" value="<?php echo $data['rest_name'] ?>"/>
+                    <input type="text"  name="con_name" placeholder ="" value="<?php echo $data['con_name'] ?>"/>
                 </div>     
                 <div class="form-group">
-                    <input type= "text" name="phone" placeholder="" value ="<?php echo $data['phone'] ?>"/>
+                    <input type= "text" name="con_datetime" placeholder="" value ="<?php echo $data['con_datetime'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="rest_type" placeholder="" value ="<?php echo $data['rest_type'] ?>"/>
+                    <input type= "text" name="price" placeholder="" value ="<?php echo $data['price'] ?>"/>
                 </div>
                 <div class="form-group">
-                    <input type= "text" name="rest_descript" placeholder="" value ="<?php echo $data['rest_descript'] ?>"/>
-                </div> 
-                <div class="form-group">
-                    <input type="text" name="rest_url" placeholder="" value="<?php echo $data['rest_url'] ?>"/>
-                </div>
-                <div class="form-group">
-                    <input type="hidden" name="rest_id" value="<?php echo $data['rest_id']?>"/>
+                    <input type="hidden" name="con_id" value="<?php echo $data['con_id']?>"/>
                     <button type="submit">Save Changes</button>
                     <a href="home.php"><button  type="button">Back</button></a>
                 </div>
