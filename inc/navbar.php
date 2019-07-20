@@ -31,6 +31,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       <a class="dropdown-item" href="admin_ev.php">Insert Place to GO</a>
       <a class="dropdown-item" href="admin_con.php">Insert Concert</a>
       <a class="dropdown-item" href="admin_res.php">Insert Restaurant</a>
+      <a class="dropdown-item" href="admin_user.php">Add new admin</a>
     </div>
 </div>
     <?php
