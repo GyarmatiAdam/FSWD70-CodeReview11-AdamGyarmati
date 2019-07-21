@@ -11,10 +11,15 @@ $url = 'https://api.sunrise-sunset.org/json?lat=48.2437725&lng=16.2950406&date=t
 $response = curl_get($url); 
 $json = json_decode($response);
 
-//Sunset and sunrise times
+//The open movie database
 $url = 'http://www.omdbapi.com/?i=tt3896198&apikey=51fef794';
 $response = curl_get($url); 
 $jsonomd = json_decode($response);
+
+//NASA
+$url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+$response = curl_get($url); 
+$jsonnasa = json_decode($response);
 
 ?>
 <!doctype html>
@@ -42,10 +47,8 @@ $jsonomd = json_decode($response);
                     
                 <?php echo $json->results->sunrise;?><br>
                 <?php echo $json->results->sunset;?><br><br>
-                <p>Today is <?php echo $json->results->day_length;?> long.</p>
+                <p>Today is <?php echo $json->results->day_length;?> long.</p><hr><br>
 
-            </div>
-            <div class="col-sm-4">
                 <h3>The Open Movie Database</h3>
                 <p>Title: <?php echo $jsonomd->Title ?></p>
                
@@ -69,8 +72,17 @@ $jsonomd = json_decode($response);
                 
             </div>
 
-            <div class="col-sm-4">
- 
+            <div class="col-sm-8">
+            <h3>NASA API:</h3>
+                <?php 
+                echo $jsonnasa->date."<br><br>";
+                echo $jsonnasa->explanation."<br><br>";
+                echo '<img src=" '.$jsonnasa->hdurl.'" style="width:500px"><br>';
+                echo $jsonnasa->media_type."<br>";
+                echo $jsonnasa->service_version."<br>";
+                echo $jsonnasa->title."<br>";
+                echo '<img src=" '.$jsonnasa->url.'" style="width:500px"><br>';
+                  ?>
             </div>
         </div>
     </div>
