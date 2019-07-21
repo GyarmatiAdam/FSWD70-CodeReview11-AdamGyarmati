@@ -157,8 +157,8 @@ if ($res) {
                 <span id="error_email" class="text-danger"><?= $emailError ?></span>
             </div>
             <div class="form-group">
-                <label for="pass">Password</label>
-                <input type="pass" class="form-control" name="pass" id="pass" placeholder="Password">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
                 <span class ="text-danger"><?= $passError ?></span>
             </div>
 
