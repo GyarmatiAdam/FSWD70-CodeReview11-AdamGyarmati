@@ -23,7 +23,7 @@
   <?php
   include_once "inc/navbar.php";
   ?>
-  <div style="margin-top:4rem" class="container">
+  <div style="margin-top:6rem" class="container">
   <div class="row">
     <div class="col-sm-2">
 

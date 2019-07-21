@@ -30,7 +30,7 @@ if ($_GET['ev_id']) {
     <?php 
         require_once 'inc/navbar.php';
     ?> 
-<div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
+<div style="margin-top: 5rem; margin-bottom: 3rem" class="container">
 
         <div class="row">
             <div class="col-sm-2">

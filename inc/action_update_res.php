@@ -37,7 +37,13 @@ if ($_POST) {
     <div class="col-sm-6">
 
 <?php
-    $sql = "UPDATE restaurant SET rest_name = '$rest_name', phone = '$phone', rest_type = '$rest_type', rest_descript = '$rest_descript', rest_url = '$rest_url' WHERE rest_id = {$id}";
+    $sql = "UPDATE restaurant
+     SET rest_name = '$rest_name', 
+     phone = '$phone', 
+     rest_type = '$rest_type', 
+     rest_descript = '$rest_descript', 
+     rest_url = '$rest_url' 
+     WHERE rest_id = {$id}" ;
     if($connect->query($sql) === TRUE) {
         echo  "<p>Successfully Updated</p>";
         echo "<a href='../update_res.php?rest_id=" .$id."'><button class='btn btn-primary' type='button'>Back</button></a>";

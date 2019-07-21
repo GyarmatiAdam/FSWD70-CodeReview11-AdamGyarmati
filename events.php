@@ -22,7 +22,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 
     <title>Home</title>
   </head>
-  <body>
+  <body style="margin-top: 3rem">
   <?php
   include_once "inc/navbar.php";
   ?>

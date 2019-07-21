@@ -29,7 +29,7 @@ if ($_GET['rest_id']) {
     <?php 
         require_once 'inc/navbar.php';
     ?> 
-<div style="margin-top: 3rem; margin-bottom: 3rem" class="container">
+<div style="margin-top: 5rem; margin-bottom: 3rem" class="container">
 
         <div class="row">
             <div class="col-sm-2">
@@ -38,7 +38,7 @@ if ($_GET['rest_id']) {
             <div class="col-sm-8">
 
 
-        <form action="inc/action_update.php" method="post">
+        <form action="inc/action_update_res.php" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" name="rest_name" value="<?php echo $data['rest_name'] ?>"/>
                 </div>     
@@ -49,7 +49,7 @@ if ($_GET['rest_id']) {
                     <input type= "text" class="form-control" name="rest_type" value ="<?php echo $data['rest_type'] ?>"/>
                 </div>
                 <div class="form-group">
-                <textarea name="rest_descript" class="form-control" cols="30" rows="10">
+                <textarea type="text" name="rest_descript" class="form-control" cols="30" rows="10">
                     <?php echo $data['rest_descript'] ?> 
                 </textarea>
                 </div> 
