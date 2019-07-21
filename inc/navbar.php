@@ -20,6 +20,9 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     <li class="nav-item">
       <a class="nav-link" href="events.php">Events</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="api.php">APIs</a>
+    </li>
     <!-- hidden button for amin only -->
     <?php
     if (isset($_SESSION['admin'])){
