@@ -8,11 +8,13 @@ body{
     background-size:16px 16px;
 }
 
+.col-sm-6,
 tr{
     color: aliceblue;
     background-color: rgb(0, 0, 0, 0.5);
 }
 .col-sm-4,
+.col-sm-6,
 .col-sm-8{
     color: aliceblue; 
     text-align: justify;

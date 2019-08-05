@@ -166,7 +166,7 @@ if ($res) {
             <button id="submit_register" type="submit" value="register" name="register" class="btn btn-primary">Register</button>
         </form><br>
         <a href="index.php"><button type="submit" value="login" class="btn btn-primary">Got to Login</button></a>
-      </div>
+      </div><br>
       <div class="col-sm-3">
 
       </div>

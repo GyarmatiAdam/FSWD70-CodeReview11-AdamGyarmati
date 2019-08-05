@@ -113,7 +113,7 @@ if(isset($_POST['login'])) {
         </form><br>
         <a href="register.php"><button type="submit" value="register" class="btn btn-primary">Got to register</button></a>
 
-        </div>
+        </div><br>
         <div class="col-sm-3">
 
         </div>
