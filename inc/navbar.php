@@ -7,6 +7,9 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 ?>
 <!doctype html>
 <html lang="en">
+<head>
+  <link rel="stylesheet" href="inc/style.css">
+</head>
   
 <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="collapse navbar-collapse" id="navbarNav">

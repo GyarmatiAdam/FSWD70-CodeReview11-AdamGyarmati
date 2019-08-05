@@ -19,7 +19,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="inc/style.css">
     <title>Home</title>
   </head>
   <body>
@@ -50,37 +50,37 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     //restaurants
       echo '<table class="table">
       <tr>
-      <th scope="col">City</th>
+      <th colspan="7" scope="col">City</th>
       <th scope="col">Restaurant Name</th>
       </tr>
       <tr>
-      <td scope="row">'.$row['city'] .'</td>
+      <td colspan="7" scope="row">'.$row['city'] .'</td>
       <td>'.$row['rest_name'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Address</th>
+      <th colspan="6" scope="col">Address</th>
       <th scope="col">Phone</th>
       <th scope="col">Type</th>
       </tr>
       <tr>
-      <td scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
+      <td colspan="6" scope="row">'.$row['zip_code'] .', '.$row['addr'] .'</td>
       <td>'.$row['phone'] .'</td>
       <td>'.$row['rest_type'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Description</th>
+      <th colspan="9" scope="col">Description</th>
       </tr>
       <tr>
-      <td colspan="7">'.$row['rest_descript'] .'</td>
+      <td colspan="9">'.$row['rest_descript'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Website</th>
+      <th colspan="9" scope="col">Website</th>
       </tr>
       <tr>
-      <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
+      <td colspan="9"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
       </tr>';
 
       if (isset($_SESSION['admin'])){
@@ -115,14 +115,14 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr><br>
 
       <tr>
-      <th scope="col">Date and Time</th>
+      <th colspan="7" scope="col">Date and Time</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['con_datetime'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Price</th>
+      <th colspan="7" scope="col">Price</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['price'] .'</td>
@@ -169,14 +169,14 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr><br>
 
       <tr>
-      <th scope="col">Description</th>
+      <th colspan="7" scope="col">Description</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['ev_descript'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Website</th>
+      <th colspan="7" scope="col">Website</th>
       </tr>
       <tr>
       <td colspan="7"><a target="_blank" href="">'.$row['ev_url'] .'</a></td>
@@ -185,7 +185,7 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       if (isset($_SESSION['admin'])){
         echo "<div class='btn-group mr-2' role='group'>
          <a href='update_ev.php?ev_id=" .$row['ev_id']."'><button class='btn btn-warning' type='button'>Update</button></a>
-         <a href='delete_ev.php?ev_id=" .$row['ev_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div>";
+         <a href='delete_ev.php?ev_id=" .$row['ev_id']."'><button class='btn btn-danger' type='button'>Delete</button></a></div></div>";
    }
 
     }

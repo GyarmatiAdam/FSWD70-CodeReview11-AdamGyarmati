@@ -59,14 +59,14 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr><br>
 
       <tr>
-      <th scope="col">Date and Time</th>
+      <th colspan="7" scope="col">Date and Time</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['con_datetime'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Price</th>
+      <th colspan="7" scope="col">Price</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['price'] .'</td>
@@ -107,14 +107,14 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr><br>
 
       <tr>
-      <th scope="col">Description</th>
+      <th colspan="7" scope="col">Description</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['ev_descript'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Website</th>
+      <th colspan="7" scope="col">Website</th>
       </tr>
       <tr>
       <td colspan="7"><a target="_blank" href="">'.$row['ev_url'] .'</a></td>

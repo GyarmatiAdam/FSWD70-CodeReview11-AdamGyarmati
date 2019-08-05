@@ -51,11 +51,11 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
     //restaurants
       echo '<table class="table">
       <tr>
-      <th scope="col">City</th>
+      <th colspan="2" scope="col">City</th>
       <th scope="col">Restaurant Name</th>
       </tr>
       <tr>
-      <td scope="row">'.$row['city'] .'</td>
+      <td colspan="2" scope="row">'.$row['city'] .'</td>
       <td>'.$row['rest_name'] .'</td>
       </tr><br>
 
@@ -71,14 +71,14 @@ if(!isset($_SESSION["admin"]) && !isset($_SESSION["user"])){
       </tr><br>
 
       <tr>
-      <th scope="col">Description</th>
+      <th colspan="7" scope="col">Description</th>
       </tr>
       <tr>
       <td colspan="7">'.$row['rest_descript'] .'</td>
       </tr><br>
 
       <tr>
-      <th scope="col">Website</th>
+      <th colspan="7" scope="col">Website</th>
       </tr>
       <tr>
       <td colspan="7"><a target="_blank" href="">'.$row['rest_url'] .'</a></td>
